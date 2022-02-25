@@ -21,6 +21,11 @@ It's as simple as installing to run the app!
 controljs
 ```
 
+To access custom commands provided with the module enter the following 😁️!
+```
+/help
+```
+
 Once the app is done loading please provide it with the bot token!
 ##### YOUR BOT TOKEN IS PRIVATE I CAN'T ACCESS IT IN ANY WAY
 
