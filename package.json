@@ -1,0 +1,23 @@
+{
+  "name": "@subie/control.js",
+  "version": "1.0.0",
+  "description": "Control any discord bot using it's token!",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "run": "node ."
+  },
+  "keywords": [],
+  "author": "Subie",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^5.0.0",
+    "chalk-animation": "^1.6.0",
+    "discord.js": "^13.6.0",
+    "figlet": "^1.5.2",
+    "gradient-string": "^2.0.0",
+    "inquirer": "^8.2.0",
+    "nanospinner": "^1.0.0"
+  },
+  "devDependencies": {}
+}
