@@ -21,10 +21,14 @@ It's as simple as installing to run the app!
 controljs
 ```
 
+![Main Command](/screenshots/controljs.png)
+
 To access custom commands provided with the module enter the following 😁️!
 ```
 /help
 ```
+
+![Help Command](/screenshots/help.png)
 
 Once the app is done loading please provide it with the bot token!
 ##### YOUR BOT TOKEN IS PRIVATE I CAN'T ACCESS IT IN ANY WAY
@@ -35,6 +39,10 @@ Once the app is done loading please provide it with the bot token!
 ## Choosing the channel!
 Once you are done with choosing the server provide the app with the channel you need and once that is over you can have fun messaging around the channel 😁️!
 > Tip: If you need to go back to the server list type /stop or press enter with an empty message!
+
+# IMPORTANT
+If you come accross an error where it says you have an invalid token even tho you have working token please make sure you have all intents enabled in your [discord application](https://discord.com/developers/applications)
+![Intents](/screenshots/intents.png)
 
 # Known Bugs
 - ~~Can't go back to choosing a new server.~~
