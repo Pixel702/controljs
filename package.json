@@ -5,7 +5,7 @@
   "main": "controljs.js",
   "type": "module",
   "scripts": {
-   "main": "node .",
+   "main": "node ."
   },
   "keywords": [],
   "author": "Subie",
