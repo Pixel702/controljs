@@ -9,7 +9,7 @@ npm install -g @subie_/controljs
 
 If you want to build the package for yourself it will be just as easy 👍️!
 ```
-git clone https://github.com/Pixel702/control.js
+git clone https://github.com/Pixel702/controljs
 cd [Directory Name]
 npm install
 node .
