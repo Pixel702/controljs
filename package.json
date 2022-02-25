@@ -1,11 +1,11 @@
 {
   "name": "@subie_/controljs",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Control any discord bot using it's token!",
   "main": "controljs.js",
   "type": "module",
   "scripts": {
-   "main": "node ."
+    "main": "node ."
   },
   "keywords": [],
   "author": "Subie",
