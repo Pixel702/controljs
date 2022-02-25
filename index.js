@@ -166,12 +166,25 @@ async function channelList() {
 					return;
 				};
 
+				if (command == "invite") {
+					const inv = await channel.createInvite(
+						{
+							maxAge: 25 * 1000, // maximum time for the invite, in milliseconds
+							maxUses: 3 // maximum times it can be used
+						},
+						`Temp Invite`					
+					);
+
+					console.log(`Here is your invite: https://discord.gg/${chalk.bgBlue(inv)}`);
+				};
+
 				if (command == "help") {
 					console.log(`
 ${chalk.bgBlue("LIST OF COMMANDS:")}
 - /stop: Return to the server list
 - /members: List all members in the selected server
 - /help: Get this menu
+- /invite: Create an invite in the selected channel
 					`)
 				};
 
@@ -234,6 +247,7 @@ ${chalk.bgBlue("LIST OF COMMANDS:")}
 - /stop: Return to the server list
 - /members: List all members in the selected server
 - /help: Get this menu
+- /invite: Create an invite in the selected channel
 									`)
 								};
 							} else {
