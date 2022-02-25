@@ -25,14 +25,13 @@ Once the app is done loading please provide it with the bot token!
 ##### YOUR BOT TOKEN IS PRIVATE I CAN'T ACCESS IT IN ANY WAY
 
 ## Choosing the server!
-Currently the app can't display server names, it can only display server IDs 😭️.
-> Choose the server ID you want to hop into!
+> Choose the server you want to hop into!
 
 ## Choosing the channel!
 Once you are done with choosing the server provide the app with the channel you need and once that is over you can have fun messaging around the channel 😁️!
 > Tip: If you need to go back to the server list type /stop or press enter with an empty message!
 
 # Known Bugs
-- ~~Can't go back to choosing a new server~~
-- Can't display server name.
+- ~~Can't go back to choosing a new server.~~
+- ~~Can't display server name.~~
 - Can't render what people are saying in a channel.
