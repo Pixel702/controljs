@@ -22,7 +22,7 @@ let token;
 let chosenServer;
 
 // Functions
-const sleep = (ms = 2000) => new Promise((r) => setTimeout(r, ms));
+const sleep = (ms = 2) => new Promise((r) => setTimeout(r, ms * 1000));
 
 async function load() {
 	const rainbowTitle = chalkAnimation.rainbow(
@@ -92,7 +92,7 @@ async function serverList() {
 
 	const spinner = createSpinner(`Choosing [${answer}]...`).start();
 
-	await sleep();
+	await sleep(4);
 
 	spinner.success(`Chose [${answer}]!`);
 
