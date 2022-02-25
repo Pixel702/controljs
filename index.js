@@ -45,7 +45,7 @@ async function tokenProvider() {
 	const answers = await inquirer.prompt({
 		name: 'token',
 		type: 'input',
-		message: 'What is the bot token?',
+		message: 'What is the bot token?'
 	});
 
 	token = answers.token;
@@ -68,16 +68,22 @@ async function serverList() {
 	console.log("");
 
 	const servers = [];
+	const displayServers = [];
 
-	await client.guilds.cache.forEach(async guild => {
-		servers.push(`${guild.id}`);
-	});
+	let fetchedGuilds = await client.guilds.cache.values();
+
+	await sleep();
+
+	for (let fetchedGuild of fetchedGuilds) {
+		servers.push(fetchedGuild);
+		displayServers.push(`${fetchedGuild.name} (${fetchedGuild.id})`)
+	};
 
 	const answers = await inquirer.prompt({
 		name: 'servers',
 		type: 'list',
 		message: 'Choose a server',
-		choices: servers,
+		choices: displayServers,
 	});
 
 	const answer = answers.servers;
@@ -88,7 +94,8 @@ async function serverList() {
 
 	spinner.success(`Chose [${answer}]!`);
 
-	chosenServer = answer;
+	chosenServer = servers[displayServers.indexOf(answer)];
+	chosenServer = chosenServer.id;
 };
 
 async function channelList() {
