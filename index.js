@@ -12,9 +12,7 @@ import { createSpinner } from 'nanospinner';
 
 // Client
 const client = new Discord.Client({ intents: [
-	1 << 0,
-	1 << 1,
-	1 << 8
+	Discord.Intents.FLAGS.GUILDS
 ]});
 
 // Variables
