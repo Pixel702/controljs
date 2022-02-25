@@ -31,12 +31,6 @@ async function load() {
 
 	await sleep();
 
-	await console.clear();
-
-	figlet('CONTROL.JS', function(err, data) {
-		console.log(data);
-	});
-
 	rainbowTitle.stop();
 
 	console.log(`
