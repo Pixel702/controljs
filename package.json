@@ -24,10 +24,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Pixel702/controljs.git"
+    "url": "git+https://github.com/Pixel702/control.js.git"
   },
   "bugs": {
-    "url": "https://github.com/Pixel702/controljs/issues"
+    "url": "https://github.com/Pixel702/control.js/issues"
   },
-  "homepage": "https://github.com/Pixel702/controljs#readme"
+  "homepage": "https://github.com/Pixel702/control.js#readme",
+  "devDependencies": {}
 }
