@@ -22,7 +22,6 @@
     "inquirer": "^8.2.0",
     "nanospinner": "^1.0.0"
   },
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Pixel702/control.js.git"
