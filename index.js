@@ -60,7 +60,6 @@ async function tokenProvider() {
 		})
 		.catch(err => {
 			spinner.error({ text: 'TOKEN PROVIDED WAS NOT VALID' });
-			console.log(err);
 			process.exit(1);
 		});
 };
@@ -70,7 +69,7 @@ async function serverList() {
 
 	const servers = [];
 
-	client.guilds.cache.forEach(guild => {
+	await client.guilds.cache.forEach(async guild => {
 		servers.push(`${guild.id}`);
 	});
 
@@ -98,7 +97,9 @@ async function channelList() {
 	const channels = [];
 	const displayChannels = [];
 
-	await client.guilds.cache.get(chosenServer).channels.cache.forEach(channel => {
+	const guild = await client.guilds.cache.get(chosenServer);
+
+	await guild.channels.cache.forEach(channel => {
 		if (channel.type == "GUILD_TEXT") {
 			channels.push([channel, channel.name]);
 			displayChannels.push(channel.name);
@@ -148,18 +149,108 @@ async function channelList() {
 				return;
 			};
 
-			if (answers.msgSpoken == "/stop") {
-				willSpeak = false;
+			if (answers.msgSpoken.startsWith("/")) {
+				const args = answers.msgSpoken.slice("/".length).split(" ");
+    			const command = args.shift().toLowerCase();
 
-				return;
+				if (command == "stop") {
+					willSpeak = false;
+
+					return;
+				};
+
+				if (command == "help") {
+					console.log(`
+						${chalk.bgBlue("LIST OF COMMANDS:")}
+						- /stop: Return to the server list
+						- /members: List all members in the selected server
+						- /help: Get this menu
+					`)
+				};
+
+				if (command == "members") {
+					console.log("");
+
+					let members = [];
+					let displayMembers = [];
+
+					await guild.members.cache.forEach(member => {
+						members.push(member);
+						displayMembers.push(`${member.user.username} (${member.id})`);
+					});
+
+					const memberAnswers = await inquirer.prompt({
+						name: 'membersAsk',
+						type: 'list',
+						message: 'Choose a member',
+						choices: displayMembers,
+					});
+
+					let chosenMember = memberAnswers.membersAsk;
+
+					for (let index = 0; index < members.length; index++) {
+						const member = members[index];
+
+						if (`${member.user.username} (${member.id})` != chosenMember) continue;
+
+						console.log(`Chose: ${chalk.bgGreen(`${member.user.username} (${member.id})`)}`);
+						console.log("");
+
+						let memberSpeak = true;
+
+						while (memberSpeak) {
+							const msgMember = await inquirer.prompt({
+								name: 'msgSpoken',
+								type: 'input',
+								message: `${member.user.username}: `,
+							});
+
+							if (msgMember.msgSpoken == "") {
+								memberSpeak = false;
+
+								return;
+							};
+
+							if (msgMember.msgSpoken.startsWith("/")) {
+								const args = msgMember.msgSpoken.slice("/".length).split(" ");
+    							const command = args.shift().toLowerCase();
+
+								if (command == "stop") {
+									memberSpeak = false;
+
+									return;
+								};
+
+								if (command == "help") {
+									console.log(`
+										${chalk.bgBlue("LIST OF COMMANDS:")}
+										- /stop: Return to the server list
+										- /members: List all members in the selected server
+										- /help: Get this menu
+									`)
+								};
+							} else {
+								try {
+									member.send(msgMember.msgSpoken);
+								} catch(err) {
+									console.log(`${chalk.bgRed("ERROR: Can't dm that user")}`);
+								};
+							};
+						};
+
+						willSpeak = false;
+
+						return;
+					};
+				};
+			} else {
+				channel.send(answers.msgSpoken);
 			};
-
-			channel.send(answers.msgSpoken);
 		};
 	};
 };
 
-// Main
+// Main 
 await load();
 
 await tokenProvider();
