@@ -1,5 +1,5 @@
 {
-  "name": "@subie/control.js",
+  "name": "@subie_/controljs",
   "version": "1.0.0",
   "description": "Control any discord bot using it's token!",
   "main": "index.js",
@@ -19,5 +19,13 @@
     "inquirer": "^8.2.0",
     "nanospinner": "^1.0.0"
   },
-  "devDependencies": {}
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pixel702/control.js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Pixel702/control.js/issues"
+  },
+  "homepage": "https://github.com/Pixel702/control.js#readme"
 }
