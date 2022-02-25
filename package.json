@@ -2,10 +2,13 @@
   "name": "@subie_/controljs",
   "version": "1.0.0",
   "description": "Control any discord bot using it's token!",
-  "main": "index.js",
+  "main": "controljs.js",
   "type": "module",
   "scripts": {
-    "run": "node ."
+    "build": "...",
+    "git-commit": "git add -A . && git commit -a -m 'controljs'",
+    "git-push": "git push -u origin main",
+    "deploy": "npm run build && npm run git-commit && npm run git-push"
   },
   "keywords": [],
   "author": "Subie",
