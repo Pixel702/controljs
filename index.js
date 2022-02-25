@@ -38,6 +38,8 @@ async function load() {
 		${chalk.bgRed("ONLY YOU KNOW THE TOKEN")}.
 		When it's logged in you will see the servers that the bot is in.
 		A list of channels will appear.
+		When you are in either a channel or a member type ${chalk.bgGreen("/help")}
+		for more info on what you can do!
 	`);
 };
 
