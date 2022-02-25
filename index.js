@@ -177,7 +177,7 @@ async function channelList() {
 						`Temp Invite`					
 					);
 
-					console.log(`Here is your invite: ${chalk.bgBlue(`${inv.includes("discord.gg") ? inv : "https://discord.gg/" + inv}`)}`);
+					console.log(`Here is your invite: ${chalk.bgBlue(`${inv}`)}`);
 				};
 
 				if (command == "help") {
