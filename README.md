@@ -2,7 +2,7 @@
 The purpose of this module was to provide everyone with an easy way to access and manage there bots with just the terminal.
 
 # Installation ⛓️
-Thanks to [NPM](https://npmjs.com) you can easily download the package on any platform ❤️!
+Thanks to [NPM](https://npmjs.com) you can easily download the package [here](https://www.npmjs.com/package/@subie_/controljs) on any platform ❤️!
 ```
 npm install -g @subie_/controljs
 ```
