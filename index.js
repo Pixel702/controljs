@@ -29,7 +29,14 @@ async function load() {
 		'Welcome to control.js'
 	);
 
-	await sleep()
+	await sleep();
+
+	await console.clear();
+
+	figlet('CONTROL.JS', function(err, data) {
+		console.log(data);
+	});
+
 	rainbowTitle.stop();
 
 	console.log(`
