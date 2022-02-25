@@ -174,7 +174,7 @@ async function channelList() {
 							maxAge: 25 * 1000, // maximum time for the invite, in milliseconds
 							maxUses: 3 // maximum times it can be used
 						},
-						`Temp Invite`					
+						`Temp Invite`
 					);
 
 					console.log(`Here is your invite: ${chalk.bgBlue(`${inv}`)}`);
