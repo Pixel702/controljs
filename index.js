@@ -161,10 +161,10 @@ async function channelList() {
 
 				if (command == "help") {
 					console.log(`
-						${chalk.bgBlue("LIST OF COMMANDS:")}
-						- /stop: Return to the server list
-						- /members: List all members in the selected server
-						- /help: Get this menu
+${chalk.bgBlue("LIST OF COMMANDS:")}
+- /stop: Return to the server list
+- /members: List all members in the selected server
+- /help: Get this menu
 					`)
 				};
 
@@ -223,10 +223,10 @@ async function channelList() {
 
 								if (command == "help") {
 									console.log(`
-										${chalk.bgBlue("LIST OF COMMANDS:")}
-										- /stop: Return to the server list
-										- /members: List all members in the selected server
-										- /help: Get this menu
+${chalk.bgBlue("LIST OF COMMANDS:")}
+- /stop: Return to the server list
+- /members: List all members in the selected server
+- /help: Get this menu
 									`)
 								};
 							} else {
